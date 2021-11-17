@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>TODO NOTIFIER</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+    <script defer src="js/firebase.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div class="main-screen shadow">
+        <div class="main-screen-left">
+            <span class="main-screen-left-title">TODO<br>NOTIFIER</span>
+            <span class="main-screen-left-content">TODO NOTIFIER은<br>To Do List 중 오늘의 할 일을<br>푸쉬 알림을 통해 알려주는<br>웹 사이트입니다.</span>
+        </div>
+        <div id="loginScreen" class="main-screen-right">
+            <span class="main-screen-right-title">LOGIN</span>
+            <div id="loginForm" class="login-form">
+                <div class="login-form-input first-input">
+                    <input id="loginEmail" type="text" required>
+                    <label>이메일</label>
+                </div>
+                <div class="login-form-input">
+                    <input id="loginPassword" maxlength="12" type="password" required>
+                    <label>비밀번호</label>
+                </div>
+                <div class="login-btn">
+                    <button id="loginBtn">로그인</button>
+                    <span id="openFindPassword">비밀번호를 잊으셨나요?</span>
+                </div>
+                <div class="join">
+                    <span>계정이 없으신가요?</span>
+                    <button id="mainJoinBtn">회원가입</button>
+                </div>
+            </div>
+        </div>
+        <div class="find-password-dialog shadow">
+            <span class="find-password-title">비밀번호 찾기</span>
+            <div id="closeFindPassword" class="close"></div>
+            <div class="login-form-input first-input find-input">
+                <input id="findPasswordInput" type="text" required>
+                <label>이메일</label>
+            </div>
+            <div class="login-btn find-btn">
+                <button id="findPassword">찾기</button>
+            </div>
+        </div>
+        <div id="registerScreen" class="main-screen-right register-screen">
+            <span class="main-screen-right-title">REGISTER</span>
+            <div id="registerForm" class="login-form">
+                <div class="login-form-input first-input">
+                    <input id="nickname" type="text" required>
+                    <label>닉네임</label>
+                </div>
+                <div class="login-form-input">
+                    <input id="email" type="text" required>
+                    <label>이메일</label>
+                </div>
+                <div class="login-form-input">
+                    <input id="password" maxlength="12" type="password" required>
+                    <label>비밀번호 (6 ~ 12자리)</label>
+                </div>
+                <div class="login-form-input">
+                    <input id="passwordConfirm" maxlength="12" type="password" required>
+                    <label>비밀번호 확인</label>
+                </div>
+                <div class="login-btn register-btn">
+                    <button id="joinBtn">회원가입</button>
+                    <button id="cancelJoinBtn">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-success-screen shadow">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        <div id="welcomeMsg">
+            <div id="loginNickname" class="welcome-message">Test 님</div>
+            <div class="welcome-message">환영합니다!</div>
+        </div>
+    </div>
+</body>
+</html>

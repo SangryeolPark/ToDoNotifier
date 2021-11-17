@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0"/>
+    <title>TODO NOTIFIER</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+    <script defer src="js/firebase.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/calendar.js"></script>
+
+</head>
+<body>
+    <div class="main-screen shadow">
+        <div class="top-content">
+            <span id="mainTitle"> 님의 To Do List</span>
+            <img class="img-add" src="add_img.png" width="30px" height="30px">
+            <img class="img-logout" src="logout_img.png" width="30px" height="30px">
+        </div>
+        <div class="main-content">
+            <div class="calender">
+                <section class="main">
+                    <div class="month clearfix">
+                        <span class="left">
+                            <i class="fas fa-chevron-left left"></i>
+                        </span>
+                        <span class="right">
+                            <i class="fas fa-chevron-right right"></i>
+                        </span>
+                        <p class="month-name"></p>
+                    </div>
+                    <div class="dayCount">
+                        <ul class="dayCount-list clearfix">
+                            <li>MON</li>
+                            <li>TUE</li>
+                            <li>WED</li>
+                            <li>THU</li>
+                            <li>FRI</li>
+                            <li>SAT</li>
+                            <li>SUN</li>
+                        </ul>
+                    </div>
+                    <ul class="day clearfix">
+
+                    </ul>
+                </section>
+            </div>
+            <div class="today-list list">
+                <span class="today-title">오늘의 할 일</span>
+            </div>
+            <div class="selected-day-list list">
+                <span class="selected-day-title"></span>
+            </div>
+        </div>
+    </div>
+    <div class="add-to-do-dialog shadow dialog">
+        <span class="add-to-do-title">할 일 추가</span>
+        <!--<div id="closeAddToDo" class="close"></div>-->
+        <div class="add-to-do-content">
+            날짜 <input id="addToDoDate" class="date" type="date"><br>
+            내용 <input id="addToDoTitle" class="content" type="text">
+        </div>
+        <div class="add-to-do-btn">
+            <button class="main-page-btn" id="addToDoBtn">추가</button>
+            <button class="cancel-btn" id="cancelAddToDoBtn">취소</button>
+        </div>
+    </div>
+    <div class="logout-dialog shadow dialog">
+        <span class="logout-title">로그아웃</span>
+        <span class="logout-content">로그아웃 하시겠습니까?</span>
+        <div class="logout-btn">
+            <button class="main-page-btn" id="logoutBtn">로그아웃</button>
+            <button class="cancel-btn" id="cancelLogoutBtn">취소</button>
+        </div>
+    </div>
+    <div class="logout-success-screen shadow">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        <div id="goodByeMsg">
+            <div id="loginNickname" class="good-bye-message">Test 님</div>
+            <div class="good-bye-message">안녕히 가세요!</div>
+        </div>
+    </div>
+</body>
+</html>
