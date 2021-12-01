@@ -180,7 +180,7 @@ button {
     }
 }
 
-.add-to-do-dialog {
+.add-to-do-dialog, .edit-to-do-dialog {
     position: absolute;
     background: white;
     position: absolute;
@@ -196,7 +196,24 @@ button {
     align-items: center;
 }
 
-.add-to-do-title {
+.set-alarm-dialog {
+    position: absolute;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 172px;
+    border-radius: 10px;
+    border: solid 2px #ff779b;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.add-to-do-title, .edit-to-do-title, .set-alarm-title {
     font-size: 20px;
     font-weight: bold;
     color: black;
@@ -205,17 +222,23 @@ button {
     left: 25px;
 }
 
-.add-to-do-content {
+.add-to-do-content, .edit-to-do-content {
     font-size: 17px;
     position: absolute;
-    top: 67px;
+    top: 69px;
 }
 
-.add-to-do-content input {
+.set-alarm-content {
+    font-size: 17px;
+    position: absolute;
+    top: 69px;
+}
+
+.add-to-do-content input, .edit-to-do-content input, .set-alarm-content input {
     margin-left: 5px;
 }
 
-.date {
+.date, .time {
     width: 200px;
     height: 25px;
 }
@@ -252,7 +275,7 @@ button {
     box-shadow: 0px 0px 5px 0px #ff779b;
 }
 
-.add-to-do-btn {
+.add-to-do-btn, .edit-to-do-btn, .set-alarm-btn {
     position: absolute;
     bottom: 20px;
 }
@@ -317,10 +340,16 @@ button {
     right: 10px;
 }
 
-.img-notify-card {
+.img-edit-card {
     position: absolute;
     top: 14px;
     right: 40px;
+}
+
+.img-notify-card {
+    position: absolute;
+    top: 14px;
+    right: 70px;
 }
 
 .list-title {

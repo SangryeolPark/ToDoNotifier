@@ -113,7 +113,7 @@ function makeCalendar(year,mon,dayCount){
         }
 
         // 오늘보다 이전 날짜 비활성화
-        if(i < currentDay) {
+        if(i < currentDay && mon == currentMon) {
             list.style.opacity = '0.5';
             list.classList.add('disabled');
         }
@@ -196,7 +196,7 @@ Day.addEventListener('click',(event)=>{
         selectedDateTemp = yearOfChoice + '-' + monthTemp + '-' + dayTemp;
         selectedDateText = yearOfChoice + '년 ' + MonOfChoice + '월 ' + DayOfChoice + '일';
 
-        if(selectedDate == todayValue) {
+        if(selectedDateTemp == todayValue) {
             $(".selected-day-list").hide();
             $(".today-list").css('height','660px');
         } else {
@@ -209,7 +209,6 @@ Day.addEventListener('click',(event)=>{
         getSelectedDayToDo();
         getTodayToDo();
         
-
         clickEventArr.push(event.target);
     }
 });

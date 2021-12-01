@@ -1,4 +1,4 @@
-let firebaseAuth, firebaseDatabase;
+let firebaseAuth, firebaseDatabase, messaging;
 const firebaseConfig = {
     apiKey: "AIzaSyCcrEByCpYeZuoq1Gy-yRJYyISoIa-DPkk",
     authDomain: "todo-notifier-20810.firebaseapp.com",
@@ -13,3 +13,12 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebaseAuth = firebase.auth();
 firebaseDatabase = firebase.database();
+messaging = firebase.messaging();
+
+Notification.requestPermission().then(function(permission) {
+    if (permission === 'granted') {
+      console.log('Notification permission granted.');
+    } else {
+      console.log('Unable to get permission to notify.');
+    }
+});

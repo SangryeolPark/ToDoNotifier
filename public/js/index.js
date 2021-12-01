@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.main-screen').fadeIn(1000).css('display', 'flex');
     $('input').attr('autocomplete','off');
 
-    //userSessionCheck();
+    userSessionCheck();
 
     $('#openFindPassword').click(function() {
         $('.main-screen-right').css({ 'transition': '0.5s', 'filter': 'blur(2px)', 'pointer-events': 'none'}, 500);
